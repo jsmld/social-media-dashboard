@@ -43,7 +43,7 @@ const ThemeSwitch = styled((props: SwitchProps) => (
 	},
 	'& .MuiSwitch-track': {
 		borderRadius: 26 / 2,
-		backgroundColor: theme.palette.mode === 'light' ? 'hsl(230, 22%, 74%)' : '#fff',
+		background: theme.palette.mode === 'light' ? 'hsl(230, 22%, 74%)' : '#fff',
 		opacity: 1,
 		transition: theme.transitions.create(['background-color'], {
 			duration: 700,
