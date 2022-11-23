@@ -4,7 +4,7 @@ import Header from './components/Header';
 import SocialCardContainer from './components/SocialCardContainer';
 
 const App: React.FC = () => (
-	<Box bgcolor='#f5f7ff'>
+	<Box sx={{background: 'linear-gradient(to bottom, #f5f7ff 0%, #f5f7ff 70%, #fff 70%, #fff 100%)'}}>
 		<Container maxWidth='xl'>
 			<Header />
 			<SocialCardContainer />
