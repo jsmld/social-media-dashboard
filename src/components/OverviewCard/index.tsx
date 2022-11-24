@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Card, Typography } from '@mui/material';
+import { Box, Paper, Typography } from '@mui/material';
 
 type Props = {
   info: string;
@@ -11,12 +11,12 @@ type Props = {
 }
 
 const OverviewCard: React.FC<Props> = ({ info, icon, count, statIcon, statColor, stat}) => (
-	<Card variant='outlined' sx={{
+	<Paper elevation={0} sx={{
 		display: 'flex',
 		flexDirection: 'column',
 		rowGap: 3,
 		bgcolor: '#f0f2fa',
-		minWidth: '20%',
+		minWidth: '23%',
 		maxHeight: '265px',
 		px: 4,
 		py: 3,
@@ -44,7 +44,7 @@ const OverviewCard: React.FC<Props> = ({ info, icon, count, statIcon, statColor,
 				<Typography color={statColor}>{stat}</Typography>
 			</Box>
 		</Box>
-	</Card>
+	</Paper>
 );
 
 export default OverviewCard;
