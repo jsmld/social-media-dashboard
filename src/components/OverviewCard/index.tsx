@@ -25,7 +25,7 @@ const OverviewCard: React.FC<Props> = ({ info, icon, count, statIcon, statColor,
 		}
 	}}>
 		<Box display='flex' justifyContent='space-between'>
-			<Typography fontSize='1.1rem' fontWeight={900} color='#63687e'>{info}</Typography>
+			<Typography fontSize='0.875rem' fontWeight={900} color='#63687e'>{info}</Typography>
 			<Box display='flex' justifyContent='center' alignItems='center'>
 				<img src={icon} />
 			</Box>
