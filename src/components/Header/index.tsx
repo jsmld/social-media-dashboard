@@ -1,9 +1,11 @@
 import React from 'react';
 import { Box, Stack, Typography, useMediaQuery } from '@mui/material';
 import ThemeSwitch from '../ThemeSwitch';
+import { ColorModeContext } from '../../contexts/ThemeContext';
 
 const Header: React.FC = () => {
 	const desktop = useMediaQuery('(min-width: 600px)');
+	const colorMode = React.useContext(ColorModeContext);
 	return (
 		<Stack direction={desktop ? 'row' : 'column'} justifyContent='space-between' spacing={desktop ? 0 : 4} pt={5} pb={6}>
 			<Box>
@@ -12,7 +14,7 @@ const Header: React.FC = () => {
 			</Box>
 			<Box display='flex' flexDirection='row' alignItems='center' justifyContent={desktop ? 'normal' : 'space-between'}>
 				<Typography component='h2' fontSize='0.9rem' fontWeight={700} color='#63687e' pr={1}>Dark Mode</Typography>
-				<ThemeSwitch />
+				<ThemeSwitch onClick={colorMode.toggleColorMode} />
 			</Box>
 		</Stack>
 	);

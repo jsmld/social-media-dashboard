@@ -1,22 +1,26 @@
 import { createTheme } from '@mui/material/styles';
-import { red } from '@mui/material/colors';
+import { orange, red } from '@mui/material/colors';
+import { PaletteMode } from '@mui/material';
 
 // Create a theme instance.
 const theme = createTheme({
 	typography: {
 		fontFamily: 'Inter'
-	},
-	palette: {
-		primary: {
-			main: '#556cd6',
-		},
-		secondary: {
-			main: '#19857b',
-		},
-		error: {
-			main: red.A400,
-		},
-	},
+	}
 });
+
+export const getCustomTheme = (mode: PaletteMode) => ({
+	palette: {
+		mode,
+		...(mode === 'light'
+			? {
+				primary: red,
+			}
+			: {
+				primary: orange,
+			})
+	}, theme
+});
+
 
 export default theme;
