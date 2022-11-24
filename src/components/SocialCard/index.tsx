@@ -1,4 +1,4 @@
-import { Box, Card, Typography } from '@mui/material';
+import { Box, Paper, Typography } from '@mui/material';
 import React from 'react';
 
 type Props = {
@@ -13,7 +13,17 @@ type Props = {
 }
 
 const SocialCard: React.FC<Props> = ({ barColor, icon, tag, count, people, statIcon, statColor, stat}) => (
-	<Card variant='outlined' sx={{ bgcolor: '#f0f2fa', minWidth: '20%', maxHeight: '265px', textAlign: 'center', p: 6, borderTop: `5px solid ${barColor}` }}>
+	<Paper elevation={0} sx={{ 
+		bgcolor: '#f0f2fa',
+		minWidth: '23%',
+		maxHeight: '265px',
+		textAlign: 'center',
+		p: 6,
+		borderTop: `5px solid ${barColor}`,
+		'&:hover': {
+			bgcolor: '#E1E3F0'
+		}
+	}}>
 		<Box display='flex' justifyContent='center'>
 			<img src={icon} />
 			<Typography fontSize='0.9rem' fontWeight={700} color='#63687e' sx={{ pl: 1 }}>{tag}</Typography>
@@ -31,7 +41,7 @@ const SocialCard: React.FC<Props> = ({ barColor, icon, tag, count, people, statI
 			</Box>
 			<Typography fontSize='0.9rem' fontWeight={900} color={statColor}>{stat}</Typography>
 		</Box>
-	</Card>
+	</Paper>
 );
 
 export default SocialCard;
